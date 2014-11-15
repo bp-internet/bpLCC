@@ -42,6 +42,7 @@ public class GUI extends JFrame implements ActionListener,MouseListener {
 	private static String PIURLLED = "http://192.168.1.123/433/light.php?";
 	private static String PIURLRELAIS = "http://192.168.1.123/relais/index.php";
 	private static String WOLURL = "http://192.168.1.123/wol/wol.php?device=";
+	private static String ARDUINOLED = "http://192.168.1.10/";
 	
 	private BackgroundLight bgLight;
 	BPTimer bptimer;
@@ -172,19 +173,19 @@ public class GUI extends JFrame implements ActionListener,MouseListener {
 		// Licht
 		if(e.getSource() == btn_licht_aus) // aus 
 		{
-			new UrlContent(PIURLLED+"off=1");
+			new UrlContent(ARDUINOLED+"0");
 		}
 		if(e.getSource() == btn_licht_an)
 		{
-			new UrlContent(PIURLLED+"value=72");
+			new UrlContent(ARDUINOLED+"72");
 		}
 		if(e.getSource() == btn_licht_min) 
 		{
-			new UrlContent(PIURLLED+"value=1");
+			new UrlContent(ARDUINOLED+"1");
 		}
 		if(e.getSource() == btn_licht_max) 
 		{
-			new UrlContent(PIURLLED+"value=255");
+			new UrlContent(ARDUINOLED+"255");
 		}
 		
 		// WOL
